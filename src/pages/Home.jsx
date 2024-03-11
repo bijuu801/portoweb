@@ -7,8 +7,7 @@ import Intro from '../components/Intro';
 
 function HomePage() {
     return (
-        <>  
-            <Intro />
+        <>
             <PageWrap
                 leftColumnContent={<div></div>}
                 centerColumnContent={<div></div>}
