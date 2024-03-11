@@ -1,11 +1,25 @@
-import WaveSurferPlayer from '.././components/WaveSurferPlayer';
+import PageWrap from "../components/PageWrap";
+import SoundCloudEmbed from "../components/SoundCloudEmbed";
 
 const MusicPage = () => {
-  const url = '/test.wav';
+  const soundCloudURL = 'https://soundcloud.com/liveatthebijuu';
   return (
-    <div>
-      <WaveSurferPlayer url={url} />
-    </div>
+    <PageWrap
+      centerColumnContent={
+        <div className="container mx-auto px-6 mt-8">
+          <div className="justify-center flex-wrap ml-8">
+            <SoundCloudEmbed />
+          </div>
+          <div className="justify-center flex-wrap my-4 ml-8">
+            <SoundCloudEmbed />
+          </div>
+          <div className="justify-center flex-wrap my-4 ml-8">
+            <SoundCloudEmbed />
+          </div>
+        </div>
+      }
+    />
+
   );
 };
 

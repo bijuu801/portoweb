@@ -1,7 +1,15 @@
 import ProjectItem from ".././components/ProjectItem"
-import { useEffect, useState} from "react";
+import { createClient } from '@supabase/supabase-js';
+import { useEffect, useState } from "react";
+import PageWrap from "../components/PageWrap";
 
 const ProjectsPage = () => {
+
+    const supaBaseURL = import.meta.env.VITE_SUPABASE_URL;
+    const supaBaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
+
+    const supabase = createClient(supaBaseURL, supaBaseAnonKey);
+
     const [projects, setProjects] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
@@ -10,34 +18,33 @@ const ProjectsPage = () => {
     useEffect(() => {
         const fetchProjects = async () => {
             try {
-                const response = await fetch(
-                    "https://portfolio-cb181-default-rtdb.firebaseio.com/Project.json"
-                );
+                let { data: projects, error } = await supabase
+                    .from('projects')
+                    .select('*');
 
-                if(!response.ok) {
+                if(error) {
                     throw new Error("Something went wrong.")
                 }
 
-                const responseData = await response.json();
-
                 const loadedProjects = [];
 
-                for(const key in responseData) {
+                for(const key in projects) {
                     loadedProjects.push({
                         id: key,
-                        title: responseData[key].title,
-                        description: responseData[key].description,
-                        link: responseData[key].link,
-                        image: responseData[key].image
+                        title: projects[key].title,
+                        description: projects[key].description,
+                        link: projects[key].link,
+                        image: projects[key].image
                     });
                 }
-                setProjects(loadedProjects);
+                setProjects(projects);
                 setIsLoading(false);
             } catch(error) {
                 setIsLoading(false);
-                setHttpError(error);
+                setHttpError(error.message);
             }
         };
+
         fetchProjects();
     }, []);
 
@@ -70,11 +77,16 @@ const ProjectsPage = () => {
     ));
 
     return (
-        <div className="container mx-auto px-4">
-            <div className="flex flex-wrap -mx-4">
-                {projectsList}
-            </div>
-        </div>
+        <PageWrap
+            centerColumnContent={
+                <div className="container mx-auto px-4">
+                    <div className="flex flex-wrap mx-4">
+                        {projectsList}
+                    </div>
+                </div>
+            }
+        />
+
     )
 }
 
