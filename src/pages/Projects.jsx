@@ -32,13 +32,14 @@ const ProjectsPage = () => {
 
                 const loadedProjects = [];
 
-                for(const key in projects) {
+                for (const key in projects) {
+                    proxyValue = projects[key].image 
                     loadedProjects.push({
                         id: key,
                         title: projects[key].title,
                         description: projects[key].description,
                         link: projects[key].link,
-                        image: projects[key].image
+                        image: {proxyValue}
                     });
                 }
                 setProjects(projects);
