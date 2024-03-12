@@ -2,7 +2,7 @@ import ProjectItem from ".././components/ProjectItem"
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from "react";
 import PageWrap from "../components/PageWrap";
-import klonedPic from '../assets/kloneddb.jpg'
+import klonedPic from '../assets/klonedb.jpg'
 import jucePic from '../assets/juce.jpg'
 import y2mp3Pic from '../assets/youtube2sample.jpg'
 
