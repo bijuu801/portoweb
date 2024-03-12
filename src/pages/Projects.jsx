@@ -19,6 +19,12 @@ const ProjectsPage = () => {
 
     const [httpError, setHttpError] = useState(); 
 
+    const imageMap = {
+        klonedb: klonedPic,
+        juce: jucePic,
+        youtube2sample: y2mp3Pic,
+    };
+
     useEffect(() => {
         const fetchProjects = async () => {
             try {
@@ -29,17 +35,18 @@ const ProjectsPage = () => {
                 if(error) {
                     throw new Error("Something went wrong.")
                 }
-
-                const loadedProjects = [];
+                const loadedProjects = projects.map(project => ({
+                    ...project,
+                    image: imageMap[project.image] || null, // Fallback to null if no match
+                }));
 
                 for (const key in projects) {
-                    proxyValue = projects[key].image 
                     loadedProjects.push({
                         id: key,
                         title: projects[key].title,
                         description: projects[key].description,
                         link: projects[key].link,
-                        image: {proxyValue}
+                        image: projects[key].image 
                     });
                 }
                 setProjects(projects);
