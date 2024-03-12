@@ -14,7 +14,7 @@ function RootLayout() {
           <Route path='/' element={<HomePage />} />
           <Route path='/projects' element={<ProjectsPage />} />
           <Route path='/music' element={<MusicPage />} />
-          <Route path='/blog' element={<BlogPage />} />
+          {/* <Route path='/blog' element={<BlogPage />} /> */}
           <Route path='/about' element={<AboutPage />} />
           <Route path='/contact' element={<ContactPage />} />
         </Routes>

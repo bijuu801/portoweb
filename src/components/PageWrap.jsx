@@ -29,7 +29,7 @@ const PageWrap = ({ leftColumnContent, centerColumnContent, rightColumnContent }
                 <div className="flex flex-col gap-2 mr-28 mt-4 items-center logo text-xl font-bold justify-between text-[#faf8f8] p-4  border-r border-gray-300">
                     <Link to="/projects" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>projects</Link>
                     <Link to="/music" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>music</Link>
-                    <Link to="/blog" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>musings</Link>
+                    {/* <Link to="/blog" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>musings</Link> */}
                     <Link to="/about" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>about</Link>
                     <Link to="/contact" className="hover:text-gray-300 text-md embossed-text" style={{ fontFamily: 'CaslonCP' }}>contact</Link>
                 </div>

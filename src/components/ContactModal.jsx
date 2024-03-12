@@ -1,5 +1,5 @@
 import githubIcon from '../assets/github.svg'
-import linkedInIcon from '../assets/linkedin.svg'
+import linkedIcon from '../assets/linkedin.svg'
 
 const ContactModal = ({ name, github, linkedin, imageUrl }) => {
     return (
@@ -12,7 +12,7 @@ const ContactModal = ({ name, github, linkedin, imageUrl }) => {
                         <img src={githubIcon} alt="GitHub" className="w-8 h-8" /> {/* Adjust the path as necessary */}
                     </a>
                     <a href={linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-blue-800">
-                        <img src={linkedInIcon} alt="LinkedIn" className="w-7 h-8" /> {/* Adjust the path as necessary */}
+                        <img src={linkedIcon} alt="LinkedIn" className="w-7 h-8" /> {/* Adjust the path as necessary */}
                     </a>
                 </div>
             </div>

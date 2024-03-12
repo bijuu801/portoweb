@@ -11,9 +11,9 @@ function MainNavigation() {
                 <li className='font'>
                     <Link to="/music">Music</Link>
                 </li>
-                <li className='font-bold'>
+                {/* <li className='font-bold'>
                     <Link to="/blog">Blog</Link>
-                </li>
+                </li> */}
                 <li className='font-bold'>
                     <Link to="/about">About</Link>
                 </li>
