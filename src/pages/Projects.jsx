@@ -2,10 +2,6 @@ import ProjectItem from ".././components/ProjectItem"
 import { createClient } from '@supabase/supabase-js';
 import { useEffect, useState } from "react";
 import PageWrap from "../components/PageWrap";
-import klonedPic from '../assets/klonedb.jpg'
-import jucePic from '../assets/juce.jpg'
-import y2mp3Pic from '../assets/youtube2sample.jpg'
-
 
 const ProjectsPage = () => {
 
@@ -19,12 +15,6 @@ const ProjectsPage = () => {
 
     const [httpError, setHttpError] = useState(); 
 
-    const imageMap = {
-        klonedb: klonedPic,
-        juce: jucePic,
-        youtube2sample: y2mp3Pic,
-    };
-
     useEffect(() => {
         const fetchProjects = async () => {
             try {
@@ -37,7 +27,6 @@ const ProjectsPage = () => {
                 }
                 const loadedProjects = projects.map(project => ({
                     ...project,
-                    image: imageMap[project.image] || null, // Fallback to null if no match
                 }));
 
                 for (const key in projects) {
@@ -82,12 +71,12 @@ const ProjectsPage = () => {
                 id={project.id}
                 title={project.title}
                 description={project.description}
-                image={project.image}
+                image= {project.image}
                 link={project.link}
             />
         </div>
     ));
-
+ 
     return (
         <PageWrap
             centerColumnContent={
@@ -98,8 +87,10 @@ const ProjectsPage = () => {
                 </div>
             }
         />
+        
+     );
+    
 
-    )
 }
 
 export default ProjectsPage;
