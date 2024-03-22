@@ -4,7 +4,7 @@ const ProjectItem = ( props ) => {
         <ul className="card bg-neutral rounded-lg shadow-md p-6 mb-4">
             <h3 className=" text-[#faf8f8] text-2xl font-bold mb-4" style={{ fontFamily: 'CaslonCP' }}>{props.title}</h3>
             <div className="mb-4">
-                <img className="w-72 h-32 rounded" src={`/images/${props.image}.jpg`} alt={props.title} />
+                <img className="w-72 h-32 rounded" src={`/static/images/${props.image}.jpg`} alt={props.title} />
             </div>
             <div className="text-[#d4fdd3] mb-2" style={{ fontFamily: 'CaslonCP' }}>
                 {props.description}
