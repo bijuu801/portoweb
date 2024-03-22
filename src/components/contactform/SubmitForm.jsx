@@ -47,9 +47,9 @@ const SubmitForm = (props) => {
         });
     };
 
-    const nameInputClasses = `input input-bordered input-secondary w-full max-w-xs ${formInputValidity.name ? '' : 'input-error'}`;
-    const emailInputClasses = `input input-bordered input-secondary w-full max-w-xs ${formInputValidity.email ? '' : 'input-error'}`;
-    const messageInputClasses = `textarea textarea-secondary textarea-bordered rounded w-full py-2 px-3 text-gray-300 mb-3 leading-tight focus:outline-none focus:shadow-outline ${formInputValidity.message ? '' : 'border-red-500'}`;
+    const nameInputClasses = `input input-bordered input-secondary w-full max-w-xs ${formInputValidity.name ? '' : 'input-error'} bg-white`;
+    const emailInputClasses = `input input-bordered input-secondary w-full max-w-xs ${formInputValidity.email ? '' : 'input-error'} bg-white`;
+    const messageInputClasses = `textarea textarea-secondary textarea-bordered rounded w-full py-2 px-3 text-gray-300 mb-3 leading-tight focus:outline-none ${formInputValidity.message ? '' : 'border-red-500'} bg-white`;
 
     return (
         <>
